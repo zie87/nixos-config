@@ -101,6 +101,13 @@
 
   programs = {
     dconf.enable = true;
+    gnupg = {
+      agent = {
+        enable = true;
+        enableExtraSocket = true;
+        pinentryFlavor = "curses";
+      };
+    };
   };
 
   services = {
