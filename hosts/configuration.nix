@@ -22,6 +22,7 @@
 
 {
   imports = ( import ../modules/desktops ++
+              import ../modules/browsers ++
               import ../modules/editors ++
               import ../modules/programs ++
               import ../modules/services ++
@@ -82,8 +83,6 @@
       pulseaudio        # Audio Server/Control
 
       # Apps
-      brave             # Browser
-      firefox           # Browser
 
       # File Management
       pcmanfm           # File Browser

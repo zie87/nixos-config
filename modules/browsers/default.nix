@@ -1,0 +1,4 @@
+[
+  ./brave.nix
+  ./firefox.nix
+]
