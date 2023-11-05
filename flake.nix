@@ -9,14 +9,9 @@
         url = "github:nix-community/home-manager/release-23.05";
         inputs.nixpkgs.follows = "nixpkgs";
       };
-      
-      hyprland = {                                                          # Official Hyprland Flake
-        url = "github:hyprwm/Hyprland";                                     # Requires "hyprland.nixosModules.default" to be added the host modules
-        inputs.nixpkgs.follows = "nixpkgs-unstable";
-      };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, ... }: # Function telling flake which inputs to use
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, ... }: # Function telling flake which inputs to use
   let
     vars = {                                                              # Variables Used In Flake
       user = "zie";
@@ -30,7 +25,7 @@
     nixosConfigurations = (                                               # NixOS Configurations
       import ./hosts {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs nixpkgs-unstable home-manager hyprland vars;   # Inherit inputs
+        inherit inputs nixpkgs nixpkgs-unstable home-manager vars;   # Inherit inputs
       }
     );
   };

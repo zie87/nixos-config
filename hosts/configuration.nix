@@ -30,7 +30,7 @@
   users.users.${vars.user} = {              # System User
     isNormalUser = true;
     description = "${vars.userDescription}";
-    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager"];
+    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "kvm"];
   };
 
   time.timeZone = "Europe/Zurich";        # Time zone and Internationalisation

@@ -3,7 +3,7 @@
 #  Enable with "hyprland.enable = true;"
 #
 
-{ config, lib, system, pkgs, unstable, hyprland, vars, host, ... }:
+{ config, lib, system, pkgs, unstable, vars, host, ... }:
 
 with lib;
 with host;
@@ -34,6 +34,7 @@ with host;
         wofi
         dunst
         libnotify
+        foot
         wl-clipboard    # Clipboard
         wlr-randr       # Monitor Settings
       ];
@@ -62,8 +63,10 @@ with host;
     programs = {
       hyprland = {                            # Window Manager
         enable = true;
-        package = hyprland.packages.${pkgs.system}.hyprland;
-        xwayland.enable = true;
+        xwayland = { 
+          enable = true;
+          hidpi = true;
+        };
       };
     };
 

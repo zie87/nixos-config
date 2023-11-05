@@ -9,7 +9,7 @@
 #           └─ default.nix 
 #
 
-{ lib, inputs, nixpkgs, nixpkgs-unstable, home-manager, hyprland, vars, ... }:
+{ lib, inputs, nixpkgs, nixpkgs-unstable, home-manager, vars, ... }:
 
 let
   system = "x86_64-linux";                                  # System Architecture
@@ -30,11 +30,9 @@ in
   desktop = lib.nixosSystem {                               # Desktop Profile
     inherit system;
     specialArgs = {                                         # Pass Flake Variable
-      inherit inputs system unstable hyprland vars;
+      inherit inputs system unstable vars;
       host = {
         hostName = "fenrir";
-        mainMonitor = "HDMI-A-1";
-        secondMonitor = "HDMI-A-2";
       };
     };
     modules = [                                             # Modules Used
