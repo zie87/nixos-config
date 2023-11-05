@@ -100,6 +100,7 @@
 
   programs = {
     dconf.enable = true;
+    bandwhich.enable = true;
     gnupg = {
       agent = {
         enable = true;

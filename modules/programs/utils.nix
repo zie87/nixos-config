@@ -8,6 +8,7 @@
   environment.systemPackages = [
     pkgs.fd                # find alternative
     pkgs.ripgrep           # grep alternative
+    unstable.eza           # ls alternative
   ];
 
   home-manager.users.${vars.user} = {
