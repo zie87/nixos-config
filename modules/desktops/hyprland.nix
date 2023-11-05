@@ -3,7 +3,7 @@
 #  Enable with "hyprland.enable = true;"
 #
 
-{ config, lib, system, pkgs, unstable, vars, host, ... }:
+{ config, lib, system, pkgs, unstable, hyprland, vars, host, ... }:
 
 with lib;
 with host;
@@ -30,7 +30,6 @@ with host;
         MOZ_ENABLE_WAYLAND = "1";
       };
       systemPackages = with pkgs; [
-        (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
         wofi
         dunst
         libnotify
@@ -63,10 +62,16 @@ with host;
     programs = {
       hyprland = {                            # Window Manager
         enable = true;
+        package = hyprland.packages.${pkgs.system}.hyprland;
         xwayland = { 
           enable = true;
           hidpi = true;
         };
+      };
+      waybar = {
+        enable = true;
+        package = unstable.waybar;
+        # systemd.enable = true;
       };
     };
 

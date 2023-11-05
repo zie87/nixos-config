@@ -2,13 +2,14 @@
 #  Terminal Emulator
 #
 
-{ pkgs, vars, ... }:
+{ pkgs, unstable, vars, ... }:
 
 {
   home-manager.users.${vars.user} = {
     programs = {
       alacritty = {
         enable = true;
+        package = unstable.alacritty;
       };
     };
   };

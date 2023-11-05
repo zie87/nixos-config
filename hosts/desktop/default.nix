@@ -41,8 +41,6 @@
     };
   };
 
-  #hyprland.enable = true;                       # Window Manager
-
   environment = {
     sessionVariables = {
       # WLR_NO_HARDWARE_CURSORS = "1";          # If your cursor becomes invisible

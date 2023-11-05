@@ -14,6 +14,6 @@
 
 [
   ./nvim
-  # ./neovide.nix
+  ./neovide.nix
 ]
 

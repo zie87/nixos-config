@@ -9,7 +9,7 @@
 #           └─ default.nix 
 #
 
-{ lib, inputs, nixpkgs, nixpkgs-unstable, home-manager, vars, ... }:
+{ lib, inputs, nixpkgs, nixpkgs-unstable, hyprland, home-manager, vars, ... }:
 
 let
   system = "x86_64-linux";                                  # System Architecture
@@ -30,7 +30,7 @@ in
   desktop = lib.nixosSystem {                               # Desktop Profile
     inherit system;
     specialArgs = {                                         # Pass Flake Variable
-      inherit inputs system unstable vars;
+      inherit inputs system unstable hyprland vars;
       host = {
         hostName = "fenrir";
       };
@@ -42,6 +42,9 @@ in
       home-manager.nixosModules.home-manager {              # Home-Manager Module
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { 
+          inherit unstable; 
+        };
       }
     ];
   };

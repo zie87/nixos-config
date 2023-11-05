@@ -14,4 +14,5 @@
   ./alacritty.nix
   ./kitty.nix
   ./pass.nix
+  ./utils.nix
 ]

@@ -71,7 +71,6 @@
       killall           # Process Killer
       nano              # Text Editor
       ranger            # File Manager
-      tldr              # Helper
       usbutils          # Manage USB
       wget              # Retriever
 
@@ -156,7 +155,7 @@
 
   home-manager.users.${vars.user} = {       # Home-Manager Settings
     home = {
-      stateVersion = "22.11";
+      stateVersion = "23.05";
     };
 
     programs = {
