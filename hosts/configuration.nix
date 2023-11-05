@@ -49,6 +49,7 @@
   fonts.fonts = with pkgs; [                # Fonts
     roboto
     font-awesome                            # Icons
+    powerline-fonts                         # Powerline
     (nerdfonts.override {                   # Nerdfont Icons override
       fonts = [
         "RobotoMono"
