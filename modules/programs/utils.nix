@@ -9,7 +9,8 @@
     pkgs.fd                # find alternative
     pkgs.ripgrep           # grep alternative
     unstable.eza           # ls alternative
-    pkgs.imv              # image viewer
+    pkgs.imv               # image viewer
+    pkgs.just              # command runner inspired by make
   ];
 
   home-manager.users.${vars.user} = {
