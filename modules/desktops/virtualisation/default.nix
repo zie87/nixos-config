@@ -13,5 +13,6 @@
 #
 
 [
-  ./docker.nix
+  # ./docker.nix
+  ./podman.nix
 ]
