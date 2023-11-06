@@ -75,6 +75,7 @@
       ranger            # File Manager
       usbutils          # Manage USB
       wget              # Retriever
+      file              # Show file types
 
       # Video/Audio
       alsa-utils        # Audio Control
