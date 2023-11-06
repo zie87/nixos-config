@@ -9,32 +9,35 @@
     pkgs.fd                # find alternative
     pkgs.ripgrep           # grep alternative
     unstable.eza           # ls alternative
+    pkgs.imv              # image viewer
   ];
 
   home-manager.users.${vars.user} = {
     programs = {
-      lf.enable = true;
+      lf.enable = true;       # terminal file browser
       # eza.enable = true;
-      bat.enable = true;
+      bat.enable = true;      # cat alternative
       # ripgrep.enable = true;
-      tealdeer.enable = true;
-      atuin = {
+      tealdeer.enable = true; # tldr front end
+      # imv.enable = true;      # image viewer
+      zathura.enable = true;  # pdf viewer
+      atuin = {               # stores history as db
         enable = true;
         enableBashIntegration = true;
       };
-      starship = {
+      starship = {            # meta prompt
         enable = true;
         enableBashIntegration = true;
       };
-      zoxide = {
+      zoxide = {              # directory jumps
         enable = true;
         enableBashIntegration = true;
       };
-      zellij = {
+      zellij = {              # terminal multiplexer
         enable = true;
         enableBashIntegration = true;
       };
-      fzf = {
+      fzf = {                 # fuzzy finder
         enable = true;
         enableBashIntegration = true;
       };
