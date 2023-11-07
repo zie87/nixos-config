@@ -1,4 +1,0 @@
-[
-  ./rust.nix
-  ./cpp.nix
-]
