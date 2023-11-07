@@ -54,7 +54,6 @@ in {
         wofi
         dunst
         libnotify
-        foot
         wl-clipboard    # Clipboard
         wlr-randr       # Monitor Settings
     ];

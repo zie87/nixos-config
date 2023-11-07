@@ -31,10 +31,11 @@ let
     };
   };
 in [
+  ./alacritty.nix
+  ./foot.nix
+  ./cli
   ./browser/firefox.nix
   ./config
-  ./cli
-  ./alacritty.nix
   ./git.nix
   ./network.nix
   more
