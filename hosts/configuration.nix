@@ -24,6 +24,7 @@
   imports = ( import ../modules/desktops ++
               import ../modules/browsers ++
               import ../modules/editors ++
+              import ../modules/develop ++
               import ../modules/programs ++
               import ../modules/services ++
               import ../modules/shell);
