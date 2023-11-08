@@ -13,9 +13,14 @@
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
       };
+
+      doom-one-nvim = {
+        url = "github:NTBBloodbath/doom-one.nvim";
+        flake = false;
+      };
   };
 
-  outputs = { self, nixpkgs, hyprland, home-manager, ... } @inputs: 
+  outputs = { self, nixpkgs, hyprland, home-manager, doom-one-nvim, ... } @inputs: 
   let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;

@@ -38,5 +38,6 @@ in [
   ./config
   ./git.nix
   ./network.nix
+  ./nvim
   more
 ]

@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "doom-one-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1671922186,
+        "narHash": "sha256-lfs1ZfoLI/AP+iwtnSO0OlMGTXesr0G8ncW0lLMEZH8=",
+        "owner": "NTBBloodbath",
+        "repo": "doom-one.nvim",
+        "rev": "a43528cbd7908ccec7af4587ec8e18be149095bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NTBBloodbath",
+        "repo": "doom-one.nvim",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -87,6 +103,7 @@
     },
     "root": {
       "inputs": {
+        "doom-one-nvim": "doom-one-nvim",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs"
