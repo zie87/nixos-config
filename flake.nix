@@ -2,26 +2,40 @@
   description = "Zie's NixOS Configuration";
 
   inputs = {
-      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";         # Unstable Nix Packages
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable Nix Packages
 
-      hyprland = {                                                          # Official Hyprland Flake
-        url = "github:hyprwm/Hyprland"; 
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+    hyprland = {
+      # Official Hyprland Flake
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-      home-manager = {                                                      # User Environment Manager
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+    home-manager = {
+      # User Environment Manager
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-      doom-one-nvim = {
-        url = "github:NTBBloodbath/doom-one.nvim";
-        flake = false;
-      };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    doom-one-nvim = {
+      url = "github:NTBBloodbath/doom-one.nvim";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, hyprland, home-manager, doom-one-nvim, ... } @inputs: 
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    hyprland,
+    home-manager,
+    nixvim,
+    doom-one-nvim,
+    ...
+  } @ inputs: let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
     systems = ["x86_64-linux" "aarch64-linux"];
@@ -30,9 +44,8 @@
       import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-      });   
-  in
-  {
+      });
+  in {
     inherit lib;
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 

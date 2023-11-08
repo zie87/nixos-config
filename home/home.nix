@@ -1,4 +1,4 @@
-{pkgs,  ...}: let
+{pkgs, imports,  ...}: let
   username = "zie";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
@@ -21,14 +21,6 @@
     neovide
   ];
 in {
-  programs = {
-    neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-    };
-  };
-
   programs.home-manager.enable = true;
   imports = builtins.concatMap import [
     ./programs
