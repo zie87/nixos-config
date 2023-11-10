@@ -18,6 +18,7 @@
     unrar                # Rar Files
     zip                  # Zip
 
+    distrobox            # linux subsystem for linux
     neovide
   ];
 in {

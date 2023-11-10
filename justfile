@@ -5,6 +5,7 @@ host := "fenrisulfr"
 
 # build the flake
 build:
+	git -C . add --intent-to-add --all
 	nixos-rebuild build --flake '.#{{host}}'
 	home-manager build --flake '.#{{user}}@{{host}}'
 
