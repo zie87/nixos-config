@@ -28,5 +28,8 @@
       fgrep="fgrep --color=auto";
       egrep="egrep --color=auto";
     };
+    bashrcExtra = ''
+      set -o vi
+    '';
   };
 }

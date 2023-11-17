@@ -35,7 +35,7 @@
 
   # Configure console keymap
   console = {
-    keyMap =  lib.mkDefault "de-latin1-nodeadkeys";
+    keyMap =  lib.mkDefault "en-us";
     useXkbConfig = true;
   };
   

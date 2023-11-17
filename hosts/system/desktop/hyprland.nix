@@ -32,8 +32,9 @@ in {
 
     services.xserver = {
       enable = true;
-      layout = "de";
-      xkbVariant = "nodeadkeys";
+      layout = "us";
+      xkbOptions = "caps:escape";
+      #xkbVariant = "nodeadkeys";
     };
 
     xdg.portal = {

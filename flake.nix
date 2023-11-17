@@ -20,7 +20,7 @@
       };
   };
 
-  outputs = { self, nixpkgs, hyprland, home-manager, doom-one-nvim, ... } @inputs: 
+  outputs = {flake-parts, self, nixpkgs, hyprland, home-manager, doom-one-nvim, ... } @inputs: 
   let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
@@ -34,6 +34,9 @@
   in
   {
     inherit lib;
+
+
+
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 
     nixosConfigurations = {

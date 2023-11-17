@@ -19,6 +19,7 @@
     zip                  # Zip
 
     neovide
+    calibre		 # e-book manager and software
   ];
 in {
   programs = {
