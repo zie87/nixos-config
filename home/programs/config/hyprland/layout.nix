@@ -5,7 +5,7 @@
       kb_layout = us 
       #kb_variant = nodeadkeys
       kb_model =
-      kb_options = caps:escape;
+      kb_options = caps:escape
       kb_rules =
 
       follow_mouse = 1

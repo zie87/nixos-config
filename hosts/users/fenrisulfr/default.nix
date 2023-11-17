@@ -34,5 +34,18 @@
         '';
       };
     };
+    keyd = {
+      enable = false;
+      keyboards = {
+        default = {
+          ids = ["*"];
+          settings = {
+            main = {
+              capslock = "overload(esc, meta)";
+            };
+          };
+        };
+      };
+    };
   };
 }
