@@ -47,6 +47,7 @@
 	neorg
 
     	doom-one-nvim
+	headlines-nvim
 	zie-nvim
     ];
 
