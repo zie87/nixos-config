@@ -20,6 +20,9 @@
 
     neovide
     calibre		 # e-book manager and software
+    steam-run
+    glxinfo
+    vulkan-tools
   ];
 in {
   programs = {
