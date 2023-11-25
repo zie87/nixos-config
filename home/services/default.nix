@@ -6,5 +6,6 @@ let
   };
 in [
   ./secret.nix
+  ./virtualisation.nix
   more
 ]

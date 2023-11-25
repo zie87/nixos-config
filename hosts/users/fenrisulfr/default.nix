@@ -24,27 +24,26 @@
     # interfaces.wlp70s0.useDHCP = lib.mkDefault true;
   };
 
+  virtualisation.libvirtd.enable = true;
+  programs = { 
+    virt-manager = { 
+      enable = true;
+    };
+    dconf.enable = true;
+  };
+
   services = {
     dbus.enable = true;
+    cockpit = {
+      enable = true;
+    };
     xserver = {
+      enable = true;
       videoDrivers = ["amdgpu"];
       displayManager = {
         sessionCommands = ''
           ${lib.getBin pkgs.dbus}/bin/dbus-update-activation-environment --systemd --all
         '';
-      };
-    };
-    keyd = {
-      enable = false;
-      keyboards = {
-        default = {
-          ids = ["*"];
-          settings = {
-            main = {
-              capslock = "overload(esc, meta)";
-            };
-          };
-        };
       };
     };
   };

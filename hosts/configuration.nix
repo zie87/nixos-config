@@ -70,6 +70,9 @@
     opengl = {                                  # Hardware Accelerated Video
       enable = true;
       driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = [ pkgs.mesa.drivers pkgs.amdvlk ];
+      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
     };
     bluetooth.enable = true;
     # Enable braodcom chip for bluetooth

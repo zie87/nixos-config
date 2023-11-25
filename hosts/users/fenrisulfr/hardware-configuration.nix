@@ -22,6 +22,7 @@
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
+    extraModprobeConfig = "options kvm_amd nested=1";
   };
 
   fileSystems."/" =
